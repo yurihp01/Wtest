@@ -77,7 +77,7 @@ extension ViewModel: ViewModelProtocol {
     
     func getZipCodes(by text: String, completion: @escaping Completion) {
         if !text.isEmpty {
-            request.predicate = NSPredicate(format: "zipCode CONTAINS %@", text)
+            request.predicate = NSPredicate(format: "zipCode contains[c] %@", text)
         }
             
         do {
