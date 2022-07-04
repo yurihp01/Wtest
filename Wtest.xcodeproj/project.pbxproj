@@ -19,6 +19,7 @@
 		DA11D5922870A70E004D7A09 /* WtestUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA11D5912870A70E004D7A09 /* WtestUITestsLaunchTests.swift */; };
 		DA11D59F2870BB31004D7A09 /* WingmanService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA11D59E2870BB31004D7A09 /* WingmanService.swift */; };
 		DA2D02CF2873371A003ACBB7 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2D02CE2873371A003ACBB7 /* ViewModel.swift */; };
+		DA2D02DB2873800D003ACBB7 /* UITextField+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2D02DA2873800D003ACBB7 /* UITextField+Extensions.swift */; };
 		DA57D6A42870C84300097F61 /* ZipCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA57D6A32870C84300097F61 /* ZipCode.swift */; };
 		DAFAF4F12870D65D00B0BED8 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAFAF4F02870D65D00B0BED8 /* AppCoordinator.swift */; };
 		DAFAF4F32870D67F00B0BED8 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAFAF4F22870D67F00B0BED8 /* Coordinator.swift */; };
@@ -67,6 +68,7 @@
 		DA11D5912870A70E004D7A09 /* WtestUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WtestUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		DA11D59E2870BB31004D7A09 /* WingmanService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WingmanService.swift; sourceTree = "<group>"; };
 		DA2D02CE2873371A003ACBB7 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		DA2D02DA2873800D003ACBB7 /* UITextField+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extensions.swift"; sourceTree = "<group>"; };
 		DA57D6A32870C84300097F61 /* ZipCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZipCode.swift; sourceTree = "<group>"; };
 		DAFAF4F02870D65D00B0BED8 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		DAFAF4F22870D67F00B0BED8 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
@@ -153,17 +155,15 @@
 		DA11D56D2870A70B004D7A09 /* Wtest */ = {
 			isa = PBXGroup;
 			children = (
+				DA2D02D8287377C8003ACBB7 /* ZipCodes */,
+				DA2D02D62873777B003ACBB7 /* Common */,
+				DA2D02D32873774B003ACBB7 /* Data */,
+				DA2D02D7287377B7003ACBB7 /* View */,
+				DA2D02D928737FE6003ACBB7 /* Utils */,
 				DA11D56E2870A70B004D7A09 /* AppDelegate.swift */,
-				DAFAF4F02870D65D00B0BED8 /* AppCoordinator.swift */,
-				DAFAF4F22870D67F00B0BED8 /* Coordinator.swift */,
-				DAFAF4F42870D68C00B0BED8 /* Storyboarded.swift */,
-				DA11D5722870A70B004D7A09 /* ViewController.swift */,
-				DA11D5742870A70B004D7A09 /* Main.storyboard */,
 				DA11D5772870A70D004D7A09 /* Assets.xcassets */,
 				DA11D5792870A70D004D7A09 /* LaunchScreen.storyboard */,
 				DA11D57C2870A70D004D7A09 /* Info.plist */,
-				DA11D59E2870BB31004D7A09 /* WingmanService.swift */,
-				DA57D6A32870C84300097F61 /* ZipCode.swift */,
 				DAFAF4F62870D74D00B0BED8 /* ViewCoordinator.swift */,
 				DAFAF4F82871D10B00B0BED8 /* CoreData.xcdatamodeld */,
 				DA2D02CE2873371A003ACBB7 /* ViewModel.swift */,
@@ -186,6 +186,89 @@
 				DA11D5912870A70E004D7A09 /* WtestUITestsLaunchTests.swift */,
 			);
 			path = WtestUITests;
+			sourceTree = "<group>";
+		};
+		DA2D02D028737723003ACBB7 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				DAFAF4F02870D65D00B0BED8 /* AppCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		DA2D02D12873772D003ACBB7 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				DA11D5722870A70B004D7A09 /* ViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		DA2D02D228737744003ACBB7 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		DA2D02D32873774B003ACBB7 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				DA2D02D52873776B003ACBB7 /* Model */,
+				DA2D02D428737753003ACBB7 /* Network */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		DA2D02D428737753003ACBB7 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				DA11D59E2870BB31004D7A09 /* WingmanService.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		DA2D02D52873776B003ACBB7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				DA57D6A32870C84300097F61 /* ZipCode.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		DA2D02D62873777B003ACBB7 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				DAFAF4F22870D67F00B0BED8 /* Coordinator.swift */,
+				DAFAF4F42870D68C00B0BED8 /* Storyboarded.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		DA2D02D7287377B7003ACBB7 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				DA11D5742870A70B004D7A09 /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		DA2D02D8287377C8003ACBB7 /* ZipCodes */ = {
+			isa = PBXGroup;
+			children = (
+				DA2D02D228737744003ACBB7 /* ViewModel */,
+				DA2D02D12873772D003ACBB7 /* ViewController */,
+				DA2D02D028737723003ACBB7 /* Coordinator */,
+			);
+			path = ZipCodes;
+			sourceTree = "<group>";
+		};
+		DA2D02D928737FE6003ACBB7 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				DA2D02DA2873800D003ACBB7 /* UITextField+Extensions.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -427,6 +510,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA2D02DB2873800D003ACBB7 /* UITextField+Extensions.swift in Sources */,
 				DA2D02CF2873371A003ACBB7 /* ViewModel.swift in Sources */,
 				DA11D5732870A70B004D7A09 /* ViewController.swift in Sources */,
 				DA57D6A42870C84300097F61 /* ZipCode.swift in Sources */,
