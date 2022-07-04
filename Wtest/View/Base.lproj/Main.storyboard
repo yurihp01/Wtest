@@ -37,7 +37,7 @@
                                 </items>
                             </toolbar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Ivu-hc-8sb">
-                                <rect key="frame" x="0.0" y="104" width="414" height="758"/>
+                                <rect key="frame" x="0.0" y="104" width="414" height="694"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" textLabel="lfS-RR-RXT" style="IBUITableViewCellStyleDefault" id="FtM-Qa-yYC">
@@ -59,20 +59,57 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6gG-tn-ENQ">
+                                <rect key="frame" x="0.0" y="802" width="414" height="60"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Qra-pQ-7S0">
+                                        <rect key="frame" x="16" y="0.0" width="382" height="44"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="A carregar todos os códigos postais" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3oY-Ni-VzK">
+                                                <rect key="frame" x="0.0" y="12" width="357" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="MwW-Ud-SN1">
+                                                <rect key="frame" x="357" y="9.5" width="25" height="25"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="25" id="gKv-TB-Jqs"/>
+                                                    <constraint firstAttribute="width" constant="25" id="hRf-Jj-ly4"/>
+                                                </constraints>
+                                                <color key="color" systemColor="linkColor"/>
+                                            </activityIndicatorView>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="6kf-jr-5DH"/>
+                                    <constraint firstAttribute="bottom" secondItem="Qra-pQ-7S0" secondAttribute="bottom" constant="16" id="QXj-6N-9zU"/>
+                                    <constraint firstAttribute="trailing" secondItem="Qra-pQ-7S0" secondAttribute="trailing" constant="16" id="dHM-86-NTO"/>
+                                    <constraint firstItem="Qra-pQ-7S0" firstAttribute="top" secondItem="6gG-tn-ENQ" secondAttribute="top" id="hSW-Oa-zAc"/>
+                                    <constraint firstItem="Qra-pQ-7S0" firstAttribute="leading" secondItem="6gG-tn-ENQ" secondAttribute="leading" constant="16" id="sjI-UY-q9f"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Ivu-hc-8sb" secondAttribute="trailing" id="6YI-yO-r0S"/>
                             <constraint firstItem="Ivu-hc-8sb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="A0m-Nh-jjx"/>
+                            <constraint firstItem="6gG-tn-ENQ" firstAttribute="top" secondItem="Ivu-hc-8sb" secondAttribute="bottom" constant="4" id="Arf-fx-9Go"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="6gG-tn-ENQ" secondAttribute="trailing" id="DGS-rU-WRu"/>
                             <constraint firstItem="Ivu-hc-8sb" firstAttribute="top" secondItem="2RT-8p-iCA" secondAttribute="bottom" constant="16" id="Fxz-gv-mIt"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="2RT-8p-iCA" secondAttribute="trailing" id="Jjt-Ad-sRR"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Ivu-hc-8sb" secondAttribute="bottom" id="MRV-7W-uwX"/>
+                            <constraint firstItem="6gG-tn-ENQ" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="NOn-wU-gha"/>
                             <constraint firstItem="2RT-8p-iCA" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="ZRR-ir-Y87"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Ivu-hc-8sb" secondAttribute="bottom" priority="750" id="a2c-Rq-HMA"/>
                             <constraint firstItem="2RT-8p-iCA" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="dtk-T8-gJ0"/>
+                            <constraint firstItem="6gG-tn-ENQ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="x50-cy-PS9"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="indicatorView" destination="6gG-tn-ENQ" id="76M-OL-fup"/>
                         <outlet property="searchBar" destination="xc3-3j-7g4" id="V3E-sW-oNj"/>
                         <outlet property="tableView" destination="Ivu-hc-8sb" id="rTG-XU-gEG"/>
                     </connections>
@@ -82,6 +119,9 @@
         </scene>
     </scenes>
     <resources>
+        <systemColor name="linkColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

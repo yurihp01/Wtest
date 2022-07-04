@@ -11,33 +11,7 @@ class ViewController: UIViewController, Storyboarded {
     
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
-
-    lazy var activityIndicator: UIActivityIndicatorView = {
-        let activityIndicator = UIActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: 24, height: 24))
-        activityIndicator.style = .medium
-        activityIndicator.translatesAutoresizingMaskIntoConstraints = false
-        activityIndicator.startAnimating()
-        return activityIndicator
-    }()
-    
-    lazy var loadingView: UIView = {
-        let view = UIView()
-        view.backgroundColor = .white
-        view.translatesAutoresizingMaskIntoConstraints = false
-        self.view.addSubview(view)
-        view.addSubview(activityIndicator)
-        activityIndicator.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
-        activityIndicator.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
-        activityIndicator.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
-        activityIndicator.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
-        activityIndicator.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
-        view.bringSubviewToFront(activityIndicator)
-        view.topAnchor.constraint(equalTo: self.view.topAnchor).isActive = true
-        view.leftAnchor.constraint(equalTo: self.view.leftAnchor).isActive = true
-        view.rightAnchor.constraint(equalTo: self.view.rightAnchor).isActive = true
-        view.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
-        return view
-    }()
+    @IBOutlet weak var indicatorView: UIView!
     
     weak var coordinator: ViewCoordinator?
     var viewModel: ViewModelProtocol?
@@ -54,9 +28,7 @@ class ViewController: UIViewController, Storyboarded {
     }
     
     func getCSV() {
-        loadingView.isHidden = false
-        
-        if getZipCodes().count == 0 {
+        if !UserDefaults.standard.bool(forKey: "hasFinished") {
             getCSVFromApi()
         }
     }
@@ -67,11 +39,12 @@ class ViewController: UIViewController, Storyboarded {
             case .success:
                 DispatchQueue.main.async {
                     self?.tableView.reloadData()
+                    self?.indicatorView.removeFromSuperview()
                 }
             case .failure(let error):
                 print(error)
                 DispatchQueue.main.async {
-                    self?.loadingView.isHidden = true
+                    self?.indicatorView.removeFromSuperview()
                 }
             }
         })
@@ -79,8 +52,6 @@ class ViewController: UIViewController, Storyboarded {
     
     @discardableResult
     func getZipCodes(by text: String = "") -> [ZipCodeEntity] {
-        loadingView.isHidden = true
-        
         var zipCodes = viewModel?.zipCodes ?? []
         
         viewModel?.getZipCodes(by: text, completion: { result in
