@@ -37,6 +37,7 @@ class ViewModel {
 extension ViewModel: ViewModelProtocol {
     func getCSVFromApi(completion: @escaping (Result<[ZipCodeEntity], Error>) -> Void) {
         let service = WingmanService()
+        deleteAllZipCodes()
         
         service.getPostalCode { [weak self] result in
             switch result {
@@ -51,6 +52,7 @@ extension ViewModel: ViewModelProtocol {
                         self?.save(zipCode: row)
                     }
                     
+                    UserDefaults.standard.set(true, forKey: "hasFinished")
                     completion(.success([]))
                 } catch {
                     completion(.failure(error))
@@ -73,6 +75,33 @@ extension ViewModel: ViewModelProtocol {
         } catch {
             print("Save error")
         }
+    }
+    
+    func deleteAllZipCodes() {
+        let fetchRequest: NSFetchRequest<NSFetchRequestResult>
+        fetchRequest = NSFetchRequest(entityName: "ZipCodeEntity")
+
+        let deleteRequest = NSBatchDeleteRequest(
+            fetchRequest: fetchRequest
+        )
+
+        deleteRequest.resultType = .resultTypeObjectIDs
+
+        let batchDelete = try! managedObjectContext.execute(deleteRequest)
+            as? NSBatchDeleteResult
+
+        guard let deleteResult = batchDelete?.result
+            as? [NSManagedObjectID]
+            else { return }
+
+        let deletedObjects: [AnyHashable: Any] = [
+            NSDeletedObjectsKey: deleteResult
+        ]
+
+        NSManagedObjectContext.mergeChanges(
+            fromRemoteContextSave: deletedObjects,
+            into: [managedObjectContext]
+        )
     }
     
     func getZipCodes(by text: String, completion: @escaping Completion) {

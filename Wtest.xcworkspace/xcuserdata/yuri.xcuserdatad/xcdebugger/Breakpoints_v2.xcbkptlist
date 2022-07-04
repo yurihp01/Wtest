@@ -71,65 +71,65 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "53F38575-A0C8-46BB-A0FE-B8D4A6465121"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Wtest/ZipCodes/ViewController/ViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "59"
-            endingLineNumber = "59"
-            landmarkName = "getCSV()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "5B24B63B-B31C-4A16-88A9-1E2992C5878C"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Wtest/ZipCodes/ViewController/ViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "60"
-            endingLineNumber = "60"
-            landmarkName = "getCSV()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "B9D1C32F-CDA1-4C25-94D0-DA58768E4570"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Wtest/ZipCodes/ViewController/ViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "67"
-            endingLineNumber = "67"
-            landmarkName = "getCSVFromApi()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "0D39967A-D8D4-446E-B1F6-3E63C95C51BD"
+            uuid = "700D8BBC-D722-43E8-B18E-36422A8FBD56"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Wtest/ViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "84"
-            endingLineNumber = "84"
-            landmarkName = "getZipCodes(by:completion:)"
+            startingLineNumber = "55"
+            endingLineNumber = "55"
+            landmarkName = "getCSVFromApi(completion:)"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "DB42C60A-7481-41C4-8599-572DCBE7D5B8"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Wtest/ViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "42"
+            endingLineNumber = "42"
+            landmarkName = "getCSVFromApi(completion:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "DB42C60A-7481-41C4-8599-572DCBE7D5B8 - 7a0132833bfc8cc7"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Wtest.ViewModel.getCSVFromApi(completion: (Swift.Result&lt;Swift.Array&lt;Wtest.ZipCodeEntity&gt;, Swift.Error&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "Wtest"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yuri/Documents/Wtest/Wtest/ViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "42"
+                  endingLineNumber = "42"
+                  offsetFromSymbolStart = "137">
+               </Location>
+               <Location
+                  uuid = "DB42C60A-7481-41C4-8599-572DCBE7D5B8 - dbe8475984434026"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;Swift.String, Swift.Error&gt;) -&gt; () in Wtest.ViewModel.getCSVFromApi(completion: (Swift.Result&lt;Swift.Array&lt;Wtest.ZipCodeEntity&gt;, Swift.Error&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "Wtest"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yuri/Documents/Wtest/Wtest/ViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "42"
+                  endingLineNumber = "42"
+                  offsetFromSymbolStart = "270">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

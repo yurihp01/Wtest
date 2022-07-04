@@ -23,4 +23,12 @@ extension ZipCode: Codable {
         case extensionZipCode = "ext_cod_postal"
         case city = "desig_postal"
     }
+    
+    static func getDownloadStatus() -> Bool {
+        return UserDefaults.standard.bool(forKey: "hasFinished")
+    }
+    
+    static func setDownloadStatus(finished: Bool) {
+        UserDefaults.standard.set(finished, forKey: "hasFinished")
+    }
 }
