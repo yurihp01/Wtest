@@ -13,22 +13,6 @@ enum Status {
     case error
 }
 
-enum ZipCodeError: Error {
-    case internetConnection
-    case closedDownloading
-}
-
-extension ZipCodeError: LocalizedError {
-    var errorDescription: String? {
-        switch self {
-        case .internetConnection:
-            return "Lost internet connection"
-        case .closedDownloading:
-            return "App closed while downloading zip codes" 
-        }
-    }
-}
-
 class ZipCodeServiceMock: ZipCodeServiceProtocol {
     
     let status: Status
@@ -37,7 +21,7 @@ class ZipCodeServiceMock: ZipCodeServiceProtocol {
         self.status = status
     }
     
-    func getPostalCode(onComplete: @escaping (Result<String, Error>) -> Void) {
+    func getZipCode(onComplete: @escaping (Result<String, ZipCodeError>) -> Void) {
         switch status {
         case .success:
             onComplete(.success("CSV"))

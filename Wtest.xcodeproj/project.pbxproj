@@ -25,6 +25,7 @@
 		DA2D02E22873B066003ACBB7 /* ViewModelMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2D02E12873B066003ACBB7 /* ViewModelMock.swift */; };
 		DA2D02E52873C174003ACBB7 /* ZipCodeCoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA2D02E42873C174003ACBB7 /* ZipCodeCoreData.swift */; };
 		DA57D6A42870C84300097F61 /* ZipCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA57D6A32870C84300097F61 /* ZipCode.swift */; };
+		DA5B3BB72873CB8900934C44 /* ZipCodeError.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5B3BB62873CB8900934C44 /* ZipCodeError.swift */; };
 		DAFAF4F12870D65D00B0BED8 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAFAF4F02870D65D00B0BED8 /* AppCoordinator.swift */; };
 		DAFAF4F32870D67F00B0BED8 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAFAF4F22870D67F00B0BED8 /* Coordinator.swift */; };
 		DAFAF4F52870D68C00B0BED8 /* Storyboarded.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAFAF4F42870D68C00B0BED8 /* Storyboarded.swift */; };
@@ -78,6 +79,7 @@
 		DA2D02E12873B066003ACBB7 /* ViewModelMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelMock.swift; sourceTree = "<group>"; };
 		DA2D02E42873C174003ACBB7 /* ZipCodeCoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZipCodeCoreData.swift; sourceTree = "<group>"; };
 		DA57D6A32870C84300097F61 /* ZipCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZipCode.swift; sourceTree = "<group>"; };
+		DA5B3BB62873CB8900934C44 /* ZipCodeError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZipCodeError.swift; sourceTree = "<group>"; };
 		DAFAF4F02870D65D00B0BED8 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		DAFAF4F22870D67F00B0BED8 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		DAFAF4F42870D68C00B0BED8 /* Storyboarded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboarded.swift; sourceTree = "<group>"; };
@@ -224,6 +226,7 @@
 		DA2D02D32873774B003ACBB7 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				DA5B3BB52873CB7800934C44 /* Error */,
 				DA2D02E32873C138003ACBB7 /* Persistance */,
 				DA2D02D52873776B003ACBB7 /* Model */,
 				DA2D02D428737753003ACBB7 /* Network */,
@@ -289,6 +292,14 @@
 				DA2D02E42873C174003ACBB7 /* ZipCodeCoreData.swift */,
 			);
 			path = Persistance;
+			sourceTree = "<group>";
+		};
+		DA5B3BB52873CB7800934C44 /* Error */ = {
+			isa = PBXGroup;
+			children = (
+				DA5B3BB62873CB8900934C44 /* ZipCodeError.swift */,
+			);
+			path = Error;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -531,6 +542,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DA2D02DB2873800D003ACBB7 /* UITextField+Extensions.swift in Sources */,
+				DA5B3BB72873CB8900934C44 /* ZipCodeError.swift in Sources */,
 				DA2D02E52873C174003ACBB7 /* ZipCodeCoreData.swift in Sources */,
 				DA2D02CF2873371A003ACBB7 /* ViewModel.swift in Sources */,
 				DA11D5732870A70B004D7A09 /* ViewController.swift in Sources */,
