@@ -7,11 +7,11 @@
 
 import Foundation
 
-protocol WingmanServiceProtocol {
+protocol ZipCodeServiceProtocol {
     func getPostalCode(onComplete: @escaping (Result<String, Error>) -> Void)
 }
 
-class WingmanService {
+class ZipCodeService {
     lazy var request: URLRequest = {
             let url = URL(string: "https://raw.githubusercontent.com/centraldedados/codigos_postais/master/data/codigos_postais.csv")!
             var request = URLRequest(url: url, timeoutInterval: 30)
@@ -21,7 +21,7 @@ class WingmanService {
     }()
 }
 
-extension WingmanService: WingmanServiceProtocol {
+extension ZipCodeService: ZipCodeServiceProtocol {
     func getPostalCode(onComplete: @escaping (Result<String, Error>) -> Void) {
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
               guard let data = data else {

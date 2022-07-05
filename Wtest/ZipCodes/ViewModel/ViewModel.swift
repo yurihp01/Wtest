@@ -36,7 +36,7 @@ class ViewModel {
 
 extension ViewModel: ViewModelProtocol {
     func getCSVFromApi(completion: @escaping (Result<[ZipCodeEntity], Error>) -> Void) {
-        let service = WingmanService()
+        let service = ZipCodeService()
         deleteAllZipCodes()
         
         service.getPostalCode { [weak self] result in
