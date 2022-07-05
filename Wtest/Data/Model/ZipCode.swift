@@ -7,6 +7,7 @@
 
 import Foundation
 
+// MARK: - Struct
 struct ZipCode {
     var zipCode: Int = 0
     var extensionZipCode: Int = 0
@@ -17,13 +18,17 @@ struct ZipCode {
     }
 }
 
+// MARK: - Coding Keys
 extension ZipCode: Codable {
     enum CodingKeys: String, CodingKey {
         case zipCode = "num_cod_postal"
         case extensionZipCode = "ext_cod_postal"
         case city = "desig_postal"
     }
-    
+}
+
+// MARK: - UserDefaults
+extension ZipCode {
     static func getDownloadStatus() -> Bool {
         return UserDefaults.standard.bool(forKey: "hasFinished")
     }

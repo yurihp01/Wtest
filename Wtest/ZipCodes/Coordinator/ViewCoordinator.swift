@@ -8,6 +8,9 @@
 import UIKit
 
 class ViewCoordinator: Coordinator {
+    
+    // MARK: - Declaration and init
+
     var navigationController: UINavigationController
     
     var childCoordinators: [Coordinator] = []
@@ -18,12 +21,11 @@ class ViewCoordinator: Coordinator {
         self.navigationController = navigationController
     }
     
+    // MARK: - Functions
     func start() {
         let viewController = ViewController.instantiate(storyboardName: .main)
         viewController.coordinator = self
-        viewController.viewModel = ViewModel()
+        viewController.viewModel = ViewModel(coreData: ZipCodeCoreData())
         navigationController.pushViewController(viewController, animated: true)
     }
-    
-    
 }

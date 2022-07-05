@@ -9,6 +9,7 @@ import UIKit
 
 class ViewController: UIViewController, Storyboarded {
     
+    // MARK: - Declarations
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var indicatorView: UIView!
@@ -16,23 +17,32 @@ class ViewController: UIViewController, Storyboarded {
     weak var coordinator: ViewCoordinator?
     var viewModel: ViewModelProtocol?
     
+    // MARK: - lifecycle functions
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
+        setDelegate()
+        getCSV()
+    }
+}
+
+// MARK: - Private Extension
+private extension ViewController {
+    func setDelegate() {
         searchBar.delegate = self
         tableView.delegate = self
         tableView.dataSource = self
-        
-        getCSV()
     }
     
+    /// this function check if it downloaded all zip codes to call the API or not
     func getCSV() {
         if !UserDefaults.standard.bool(forKey: "hasFinished") {
             getCSVFromApi()
         }
     }
         
+    /// It downloads a CSV file, decodes to ZipCode object and adds to CoreData
     func getCSVFromApi() {
         viewModel?.getCSVFromApi(completion: { [weak self] result in
             switch result {
@@ -50,6 +60,7 @@ class ViewController: UIViewController, Storyboarded {
         })
     }
     
+    /// This function get all data from CoreData
     @discardableResult
     func getZipCodes(by text: String = "") -> [ZipCodeEntity] {
         var zipCodes = viewModel?.zipCodes ?? []
@@ -67,6 +78,8 @@ class ViewController: UIViewController, Storyboarded {
     }
 }
 
+
+// MARK: - Extensions UITableView
 extension ViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if let text = searchBar.text, text.isEmpty {
@@ -84,6 +97,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
     }
 }
 
+// MARK: - Extensions UISearchBar
 extension ViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         let searchedText = searchBar.text ?? ""

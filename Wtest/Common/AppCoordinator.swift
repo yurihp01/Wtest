@@ -9,6 +9,7 @@ import Foundation
 
 import UIKit
 
+// MARK: - Declarations and init
 class AppCoordinator: Coordinator {
     var navigationController: UINavigationController
     
@@ -20,6 +21,7 @@ class AppCoordinator: Coordinator {
         navigationController = UINavigationController()
     }
     
+    // MARK: - Functions
     func start() {
         let childCoordinator = ViewCoordinator(navigationController: navigationController)
         childCoordinator.parentCoordinator = self
