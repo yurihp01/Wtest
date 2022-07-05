@@ -7,8 +7,10 @@
 
 import UIKit
 
+// MARK: - Extension UISearchBar
 extension UISearchBar {
 
+    /// It allows to set the done button to the keyboard when using the storyboard
     @IBInspectable var doneAccessory: Bool{
         get{
             return self.doneAccessory
@@ -20,6 +22,7 @@ extension UISearchBar {
         }
     }
 
+    /// Add done button in the top of the keyboard
     func addDoneButtonOnKeyboard() {
         let doneToolbar: UIToolbar = UIToolbar(frame: CGRect.init(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 50))
         doneToolbar.barStyle = .default
@@ -34,6 +37,7 @@ extension UISearchBar {
         self.inputAccessoryView = doneToolbar
     }
 
+    /// It resigns the keyboard from the screen
     @objc func doneButtonAction() {
         self.resignFirstResponder()
     }

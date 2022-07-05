@@ -14,7 +14,7 @@ class ViewModelTests: XCTestCase {
     
     func testGetPostalCodeSuccessful() {
         service = ZipCodeServiceMock(status: .success)
-        service.getPostalCode { result in
+        service.getZipCode { result in
             switch result {
             case .success(let csv):
                 XCTAssertFalse(csv.isEmpty, "Zip codes must not be empty!")
@@ -26,7 +26,7 @@ class ViewModelTests: XCTestCase {
     
     func testGetPostalCodeError() {
         service = ZipCodeServiceMock(status: .error)
-        service.getPostalCode { result in
+        service.getZipCode { result in
             switch result {
             case .success:
                 break

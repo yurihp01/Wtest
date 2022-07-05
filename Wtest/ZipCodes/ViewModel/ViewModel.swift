@@ -35,7 +35,6 @@ class ViewModel {
     }
 }
 
-
 // MARK: - Extension ViewModelProtocol
 extension ViewModel: ViewModelProtocol {
     
@@ -45,7 +44,7 @@ extension ViewModel: ViewModelProtocol {
         
         coreData.deleteAllZipCodes()
         
-        service.getPostalCode { [weak self] result in
+        service.getZipCode { [weak self] result in
             switch result {
             case .success(let csv):
                 do {
@@ -79,6 +78,14 @@ extension ViewModel: ViewModelProtocol {
     
     /// This function get all data from CoreData
     func getZipCodes(by text: String, completion: @escaping Completion) {
-        coreData.getZipCodes(by: text, completion: completion)
+        coreData.getZipCodes(by: text) { [weak self] result in
+            switch result {
+            case .success(let zipCodes):
+                self?.zipCodes = zipCodes
+                completion(.success(zipCodes))
+            case .failure(let error):
+                completion(.failure(error))
+            }
+        }
     }
 }
